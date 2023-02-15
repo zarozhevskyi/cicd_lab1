@@ -1,4 +1,4 @@
-def drawLine():
+def draw_line():
     print('===========================================')
 
 
@@ -38,17 +38,29 @@ def generate_result(user_choice, computer_choice):
 
 
 def main():
-    drawLine()
+    draw_line()
     print('ROCK PAPER SCISSORS LIZARD SPOCK')
-    drawLine()
+    draw_line()
     print('Options')
-    drawLine()
+    draw_line()
     print('1. Rock')
     print('2. Paper')
     print('3. Scissors')
     print('4. Lizard')
     print('5. Spock')
-    drawLine()
+    draw_line()
+    enter_condition = True
+    while enter_condition:
+        print('Enter your choice:')
+        try:
+            user_input = int(input())
+            if user_input == 1 or user_input == 2 or user_input == 3 or user_input == 4 or user_input == 5:
+                enter_condition = False
+            else:
+                print('A number must be equal to 1, 2, 3, 4 or 5')
+        except:
+            print('Please enter a number!')
+        draw_line()
 
 
 main()
