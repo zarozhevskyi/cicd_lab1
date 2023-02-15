@@ -1,1 +1,2 @@
-print("Rock Paper Scissors Lizard Spoke")
+def drawLine():
+    print('===========================================')
