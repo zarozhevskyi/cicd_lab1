@@ -1,5 +1,4 @@
 import random
-
 import constants
 
 
@@ -22,19 +21,19 @@ def generate_result(user_choice, computer_choice):
     if user_choice == computer_choice:
         result = 0
 
-    elif user_choice == 'rock' and (computer_choice == 'scissors' or computer_choice == 'lizard'):
+    elif user_choice == constants.ROCK and (computer_choice == constants.SCISSORS or computer_choice == constants.LIZARD):
         result = 1
 
-    elif user_choice == 'scissors' and (computer_choice == 'paper' or computer_choice == 'lizard'):
+    elif user_choice == constants.SCISSORS and (computer_choice == constants.PAPER or computer_choice == constants.LIZARD):
         result = 1
 
-    elif user_choice == 'lizard' and (computer_choice == 'paper' or computer_choice == 'spock'):
+    elif user_choice == constants.LIZARD and (computer_choice == constants.PAPER or computer_choice == constants.SPOCK):
         result = 1
 
-    elif user_choice == 'paper' and (computer_choice == 'spock' or computer_choice == 'rock'):
+    elif user_choice == constants.PAPER and (computer_choice == constants.SPOCK or computer_choice == constants.ROCK):
         result = 1
 
-    elif user_choice == 'spock' and (computer_choice == 'rock' or computer_choice == 'scissors'):
+    elif user_choice == constants.SPOCK and (computer_choice == constants.ROCK or computer_choice == constants.SCISSORS):
         result = 1
 
     else:
