@@ -1,5 +1,5 @@
 import random
-import constants
+from constants import signs
 
 
 def draw_line():
@@ -21,19 +21,19 @@ def generate_result(user_choice, computer_choice):
     if user_choice == computer_choice:
         result = 0
 
-    elif user_choice == constants.ROCK and (computer_choice == constants.SCISSORS or computer_choice == constants.LIZARD):
+    elif user_choice == signs['ROCK'] and computer_choice in (signs['SCISSORS'], signs['LIZARD']):
         result = 1
 
-    elif user_choice == constants.SCISSORS and (computer_choice == constants.PAPER or computer_choice == constants.LIZARD):
+    elif user_choice == signs['SCISSORS'] and computer_choice in (signs['PAPER'], signs['LIZARD']):
         result = 1
 
-    elif user_choice == constants.LIZARD and (computer_choice == constants.PAPER or computer_choice == constants.SPOCK):
+    elif user_choice == signs['LIZARD'] and computer_choice in (signs['PAPER'], signs['SPOCK']):
         result = 1
 
-    elif user_choice == constants.PAPER and (computer_choice == constants.SPOCK or computer_choice == constants.ROCK):
+    elif user_choice == signs['PAPER'] and computer_choice in (signs['SPOCK'], signs['ROCK']):
         result = 1
 
-    elif user_choice == constants.SPOCK and (computer_choice == constants.ROCK or computer_choice == constants.SCISSORS):
+    elif user_choice == signs['SPOCK'] and computer_choice in (signs['ROCK'], signs['SCISSORS']):
         result = 1
 
     else:
@@ -44,18 +44,18 @@ def generate_result(user_choice, computer_choice):
 
 def get_sign_by_number(number):
     if number == 1:
-        return constants.ROCK
+        return signs['ROCK']
     if number == 2:
-        return constants.PAPER
+        return signs['PAPER']
     if number == 3:
-        return constants.SCISSORS
+        return signs['SCISSORS']
     if number == 4:
-        return constants.LIZARD
-    return constants.SPOCK
+        return signs['LIZARD']
+    return signs['SPOCK']
 
 
-def get_random_sign():
-    number = random.randint(1, 5)
+def get_random_sign(start=1, end=5):
+    number = random.randint(start, end)
     return get_sign_by_number(number)
 
 
@@ -73,22 +73,16 @@ def main():
         draw_line()
         print('Options')
         draw_line()
-        print('1. Rock')
-        print('2. Paper')
-        print('3. Scissors')
-        print('4. Lizard')
-        print('5. Spock')
-        print('6. Exit')
+        print('1. Rock', '2. Paper', '3. Scissors', '4. Lizard', '5. Spock', '6. Exit',  sep='\n')
         draw_line()
-        enter_condition = True
-        while enter_condition:
-            print('Enter your choice:')
+        while True:
             try:
-                user_input = int(input())
-                if user_input == 1 or user_input == 2 or user_input == 3 or user_input == 4 or user_input == 5:
-                    enter_condition = False
-                elif user_input == 6:
+                user_input = int(input('Enter your choice: '))
+                if user_input in (1, 2, 3, 4, 5):
+                    draw_line()
                     break
+                elif user_input == 6:
+                    return
                 else:
                     print('A number must be equal to 1, 2, 3, 4, 5 or 6')
             except:
@@ -101,4 +95,5 @@ def main():
         generate_result(user_choice, computer_choice)
 
 
-main()
+if __name__ == '__main__':
+    main()
