@@ -47,6 +47,6 @@ def test_sign_spock():
 
 def test_invalid_sign():
     with pytest.raises(ValueError) as exception_info:
-        get_winner_message(6)
+        get_sign_by_number(6)
     assert messages['INVALID_INPUT'] in str(exception_info)
 
