@@ -20,11 +20,11 @@ def test_rock_vs_spock():
 
 
 def test_paper_vs_rock():
-    assert generate_result(signs['PAPER'], signs['ROCK']) == 2
+    assert generate_result(signs['PAPER'], signs['ROCK']) == 1
 
 
 def test_paper_vs_scissors():
-    assert generate_result(signs['PAPER'], signs['SCISSORS']) == 1
+    assert generate_result(signs['PAPER'], signs['SCISSORS']) == 2
 
 
 def test_paper_vs_spock():
