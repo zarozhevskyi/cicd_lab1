@@ -41,6 +41,8 @@ def generate_result(user_choice, computer_choice):
 
     show_winner(result)
 
+    return result
+
 
 def get_sign_by_number(number):
     if number == 1:
