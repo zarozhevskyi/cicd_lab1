@@ -1,18 +1,19 @@
 import random
-from constants import signs
+from constants import signs, messages
 
 
 def draw_line():
     print('===========================================')
 
 
-def show_winner(result):
+def get_winner_message(result):
     if result == 0:
-        print("Tie! Try your luck next time.")
+        return messages['TIE']
     elif result == 1:
-        print("Congratulations. You won!")
+        return messages['WINNER_1']
     elif result == 2:
-        print("Sorry, you lost. Good luck next time!")
+        return messages['WINNER_2']
+    raise ValueError(messages['INVALID_INPUT'])
 
 
 def generate_result(user_choice, computer_choice):
@@ -39,8 +40,6 @@ def generate_result(user_choice, computer_choice):
     else:
         result = 2
 
-    show_winner(result)
-
     return result
 
 
@@ -53,7 +52,9 @@ def get_sign_by_number(number):
         return signs['SCISSORS']
     if number == 4:
         return signs['LIZARD']
-    return signs['SPOCK']
+    if number == 5:
+        return signs['SPOCK']
+    raise ValueError(messages['INVALID_INPUT'])
 
 
 def get_random_sign(start=1, end=5):
@@ -94,7 +95,8 @@ def main():
         computer_choice = get_random_sign()
         show_choices(user_choice, computer_choice)
         draw_line()
-        generate_result(user_choice, computer_choice)
+        result = generate_result(user_choice, computer_choice)
+        print(get_winner_message(result))
 
 
 if __name__ == '__main__':
