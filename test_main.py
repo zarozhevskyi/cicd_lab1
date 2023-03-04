@@ -81,3 +81,23 @@ def test_spock_vs_scissors():
 
 def test_spock_vs_lizard():
     assert generate_result(signs['SPOCK'], signs['LIZARD']) == 1
+
+
+def test_rock_vs_rock():
+    assert generate_result(signs['ROCK'], signs['ROCK']) == 0
+
+
+def test_paper_vs_paper():
+    assert generate_result(signs['PAPER'], signs['PAPER']) == 0
+
+
+def test_scissors_vs_scissors():
+    assert generate_result(signs['SCISSORS'], signs['SCISSORS']) == 0
+
+
+def test_lizard_vs_lizard():
+    assert generate_result(signs['LIZARD'], signs['LIZARD']) == 0
+
+
+def test_spock_vs_spock():
+    assert generate_result(signs['SPOCK'], signs['SPOCK']) == 0
