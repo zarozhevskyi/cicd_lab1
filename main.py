@@ -22,19 +22,24 @@ def generate_result(user_choice, computer_choice):
     if user_choice == computer_choice:
         result = 0
 
-    elif user_choice == signs['ROCK'] and computer_choice in (signs['SCISSORS'], signs['LIZARD']):
+    elif (user_choice == signs['ROCK'] and
+          computer_choice in (signs['SCISSORS'], signs['LIZARD'])):
         result = 1
 
-    elif user_choice == signs['SCISSORS'] and computer_choice in (signs['PAPER'], signs['LIZARD']):
+    elif (user_choice == signs['SCISSORS'] and
+          computer_choice in (signs['PAPER'], signs['LIZARD'])):
         result = 1
 
-    elif user_choice == signs['LIZARD'] and computer_choice in (signs['PAPER'], signs['SPOCK']):
+    elif (user_choice == signs['LIZARD'] and
+          computer_choice in (signs['PAPER'], signs['SPOCK'])):
         result = 1
 
-    elif user_choice == signs['PAPER'] and computer_choice in (signs['SPOCK'], signs['ROCK']):
+    elif (user_choice == signs['PAPER'] and
+          computer_choice in (signs['SPOCK'], signs['ROCK'])):
         result = 1
 
-    elif user_choice == signs['SPOCK'] and computer_choice in (signs['ROCK'], signs['SCISSORS']):
+    elif (user_choice == signs['SPOCK'] and
+          computer_choice in (signs['ROCK'], signs['SCISSORS'])):
         result = 1
 
     else:
@@ -76,7 +81,8 @@ def main():
         draw_line()
         print('Options')
         draw_line()
-        print('1. Rock', '2. Paper', '3. Scissors', '4. Lizard', '5. Spock', '6. Exit',  sep='\n')
+        print('1. Rock', '2. Paper', '3. Scissors', '4. Lizard', '5. Spock',
+              '6. Exit', sep='\n')
         draw_line()
         while True:
             try:
@@ -88,7 +94,7 @@ def main():
                     return
                 else:
                     print('A number must be equal to 1, 2, 3, 4, 5 or 6')
-            except:
+            except Exception:
                 print('Please enter a number!')
             draw_line()
         user_choice = get_sign_by_number(user_input)
