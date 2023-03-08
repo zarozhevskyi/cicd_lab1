@@ -28,4 +28,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Flake8 HTML report
-        path: flake8_report/
+        path: flake8-report/
