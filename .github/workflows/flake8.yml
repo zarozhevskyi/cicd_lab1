@@ -22,7 +22,7 @@ jobs:
         pip install flake8 flake8-html
 
     - name: Run flake8
-      run: flake8 --output-file=flake8_report/index.html main.py test_main.py constants.py
+      run: flake8 --format=html --htmldir=flake8-report main.py test_main.py constants.py
 
     - name: Upload flake8 report
       uses: actions/upload-artifact@v2
