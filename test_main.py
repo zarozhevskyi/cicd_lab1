@@ -3,32 +3,36 @@ from main import generate_result, get_winner_message, get_sign_by_number
 from constants import signs, messages
 
 
-@pytest.mark.parametrize('user_choice, computer_choice, result', [(signs['ROCK'], signs['SCISSORS'], 1),
-                                                                  (signs['ROCK'], signs['LIZARD'], 1),
-                                                                  (signs['ROCK'], signs['PAPER'], 2),
-                                                                  (signs['ROCK'], signs['SPOCK'], 2),
-                                                                  (signs['PAPER'], signs['ROCK'], 1),
-                                                                  (signs['PAPER'], signs['SCISSORS'], 2),
-                                                                  (signs['PAPER'], signs['SPOCK'], 1),
-                                                                  (signs['PAPER'], signs['LIZARD'], 2),
-                                                                  (signs['SCISSORS'], signs['ROCK'], 2),
-                                                                  (signs['SCISSORS'], signs['PAPER'], 1),
-                                                                  (signs['SCISSORS'], signs['SPOCK'], 2),
-                                                                  (signs['SCISSORS'], signs['LIZARD'], 1),
-                                                                  (signs['LIZARD'], signs['ROCK'], 2),
-                                                                  (signs['LIZARD'], signs['PAPER'], 1),
-                                                                  (signs['LIZARD'], signs['SCISSORS'], 2),
-                                                                  (signs['LIZARD'], signs['SPOCK'], 1),
-                                                                  (signs['SPOCK'], signs['ROCK'], 1),
-                                                                  (signs['SPOCK'], signs['PAPER'], 2),
-                                                                  (signs['SPOCK'], signs['SCISSORS'], 1),
-                                                                  (signs['SPOCK'], signs['LIZARD'], 2),
-                                                                  (signs['ROCK'], signs['ROCK'], 0),
-                                                                  (signs['PAPER'], signs['PAPER'], 0),
-                                                                  (signs['SCISSORS'], signs['SCISSORS'], 0),
-                                                                  (signs['LIZARD'], signs['LIZARD'], 0),
-                                                                  (signs['SPOCK'], signs['SPOCK'], 0),
-                                                                  ])
+@pytest.mark.parametrize(
+    'user_choice, computer_choice, result',
+    [
+        (signs['ROCK'], signs['SCISSORS'], 1),
+        (signs['ROCK'], signs['LIZARD'], 1),
+        (signs['ROCK'], signs['PAPER'], 2),
+        (signs['ROCK'], signs['SPOCK'], 2),
+        (signs['PAPER'], signs['ROCK'], 1),
+        (signs['PAPER'], signs['SCISSORS'], 2),
+        (signs['PAPER'], signs['SPOCK'], 1),
+        (signs['PAPER'], signs['LIZARD'], 2),
+        (signs['SCISSORS'], signs['ROCK'], 2),
+        (signs['SCISSORS'], signs['PAPER'], 1),
+        (signs['SCISSORS'], signs['SPOCK'], 2),
+        (signs['SCISSORS'], signs['LIZARD'], 1),
+        (signs['LIZARD'], signs['ROCK'], 2),
+        (signs['LIZARD'], signs['PAPER'], 1),
+        (signs['LIZARD'], signs['SCISSORS'], 2),
+        (signs['LIZARD'], signs['SPOCK'], 1),
+        (signs['SPOCK'], signs['ROCK'], 1),
+        (signs['SPOCK'], signs['PAPER'], 2),
+        (signs['SPOCK'], signs['SCISSORS'], 1),
+        (signs['SPOCK'], signs['LIZARD'], 2),
+        (signs['ROCK'], signs['ROCK'], 0),
+        (signs['PAPER'], signs['PAPER'], 0),
+        (signs['SCISSORS'], signs['SCISSORS'], 0),
+        (signs['LIZARD'], signs['LIZARD'], 0),
+        (signs['SPOCK'], signs['SPOCK'], 0),
+    ]
+)
 def test_generate_result(user_choice, computer_choice, result):
     assert generate_result(user_choice, computer_choice) == result
 
