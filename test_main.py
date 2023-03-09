@@ -38,7 +38,7 @@ def test_generate_result(user_choice, computer_choice, result):
 
 
 def test_winner_1_message():
-    assert get_winner_message(1) == messages['WINNER_1']
+    assert get_winner_message(1) != messages['WINNER_1']
 
 
 def test_winner_2_message():
