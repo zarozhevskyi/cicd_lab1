@@ -72,6 +72,10 @@ def show_choices(user_choice, computer_choice):
     print(f'Computer choice: {computer_choice}')
 
 
+def number_choice():
+    return int(input())
+
+
 def main():
     while True:
         print()
@@ -86,7 +90,8 @@ def main():
         draw_line()
         while True:
             try:
-                user_input = int(input('Enter your choice: '))
+                print('Enter your choice: ')
+                user_input = number_choice()
                 if user_input in (1, 2, 3, 4, 5):
                     draw_line()
                     break
