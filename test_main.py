@@ -1,6 +1,11 @@
 from unittest.mock import patch
 import pytest
-from main import generate_result, get_winner_message, get_sign_by_number, number_choice
+from main import (
+    generate_result,
+    get_winner_message,
+    get_sign_by_number,
+    number_choice,
+)
 from constants import signs, messages
 
 
