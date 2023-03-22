@@ -1,5 +1,6 @@
+from unittest.mock import patch
 import pytest
-from main import generate_result, get_winner_message, get_sign_by_number
+from main import generate_result, get_winner_message, get_sign_by_number, number_choice
 from constants import signs, messages
 
 
@@ -75,3 +76,9 @@ def test_invalid_sign():
     with pytest.raises(ValueError) as exception_info:
         get_sign_by_number(6)
     assert messages['INVALID_INPUT'] in str(exception_info)
+
+
+@patch('builtins.input', return_value=1)
+def test_number_choice(mock_input):
+    assert number_choice() == 1
+    assert mock_input.called
